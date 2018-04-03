@@ -12,8 +12,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/fiorix/go-smpp/smpp/pdu"
-	"github.com/fiorix/go-smpp/smpp/pdu/pdufield"
+	"github.com/jmainguy/go-smpp/smpp/pdu"
+	"github.com/jmainguy/go-smpp/smpp/pdu/pdufield"
 )
 
 // ConnStatus is an abstract interface for a connection status change.

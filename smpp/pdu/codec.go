@@ -10,8 +10,8 @@ import (
 	"io"
 	"sync/atomic"
 
-	"github.com/fiorix/go-smpp/smpp/pdu/pdufield"
-	"github.com/fiorix/go-smpp/smpp/pdu/pdutlv"
+	"github.com/jmainguy/go-smpp/smpp/pdu/pdufield"
+	"github.com/jmainguy/go-smpp/smpp/pdu/pdutlv"
 )
 
 var nextSeq uint32
@@ -139,19 +139,19 @@ func Decode(r io.Reader) (Body, error) {
 	}
 	switch hdr.ID {
 	case AlertNotificationID:
-		// TODO(fiorix): Implement AlertNotification.
+		// TODO(jmainguy): Implement AlertNotification.
 	case BindReceiverID, BindTransceiverID, BindTransmitterID:
 		return decodeFields(newBind(hdr), b)
 	case BindReceiverRespID, BindTransceiverRespID, BindTransmitterRespID:
 		return decodeFields(newBindResp(hdr), b)
 	case CancelSMID:
-		// TODO(fiorix): Implement CancelSM.
+		// TODO(jmainguy): Implement CancelSM.
 	case CancelSMRespID:
-		// TODO(fiorix): Implement CancelSMResp.
+		// TODO(jmainguy): Implement CancelSMResp.
 	case DataSMID:
-		// TODO(fiorix): Implement DataSM.
+		// TODO(jmainguy): Implement DataSM.
 	case DataSMRespID:
-		// TODO(fiorix): Implement DataSMResp.
+		// TODO(jmainguy): Implement DataSMResp.
 	case DeliverSMID:
 		return decodeFields(newDeliverSM(hdr), b)
 	case DeliverSMRespID:
@@ -163,15 +163,15 @@ func Decode(r io.Reader) (Body, error) {
 	case GenericNACKID:
 		return decodeFields(newGenericNACK(hdr), b)
 	case OutbindID:
-		// TODO(fiorix): Implement Outbind.
+		// TODO(jmainguy): Implement Outbind.
 	case QuerySMID:
 		return decodeFields(newQuerySM(hdr), b)
 	case QuerySMRespID:
 		return decodeFields(newQuerySMResp(hdr), b)
 	case ReplaceSMID:
-		// TODO(fiorix): Implement ReplaceSM.
+		// TODO(jmainguy): Implement ReplaceSM.
 	case ReplaceSMRespID:
-		// TODO(fiorix): Implement ReplaceSMResp.
+		// TODO(jmainguy): Implement ReplaceSMResp.
 	case SubmitMultiID:
 		return decodeFields(newSubmitMulti(hdr), b)
 	case SubmitMultiRespID:
